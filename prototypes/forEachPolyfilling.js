@@ -1,5 +1,6 @@
 Array.prototype.cutomForEach = function (cbFunction) {
-  for (let i = 0; i < this.length; i++) cbFunction(this[i], i, this);
+  const inputArray = [...this];
+  for (let i = 0; i < inputArray.length; i++) cbFunction(inputArray[i], i, inputArray);
 };
 
 const test = [];
