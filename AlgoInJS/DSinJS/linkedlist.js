@@ -147,6 +147,12 @@ class LinkedList {
   }
   return -1
  }
+ /*
+ Returns true if the list is empty
+ */
+isEmpty() {
+  return this.size == 0
+}
 }
 
 
