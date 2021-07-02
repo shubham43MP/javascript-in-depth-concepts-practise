@@ -130,6 +130,23 @@ class LinkedList {
     }
     }
   }
+
+  /*
+  Returns index of given element if exists else -1
+  */
+ indexOf(element) {
+  let currentNode = this.head;
+  let prevNode = null;
+  let iterator = 0;
+  while(currentNode !== null ){
+    if(currentNode.element === element){
+      return iterator
+    }
+    currentNode = currentNode.next
+    iterator++
+  }
+  return -1
+ }
 }
 
 
@@ -144,3 +161,4 @@ ll.insertAt(54, 3)
 // ll.removeFrom(3)
 ll.removeElement(20)
 ll.displayLinkedList()
+console.log(ll.indexOf(28))
