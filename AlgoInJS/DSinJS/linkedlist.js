@@ -150,9 +150,9 @@ class LinkedList {
  /*
  Returns true if the list is empty
  */
-isEmpty() {
-  return this.size == 0
-}
+  isEmpty() {
+    return this.size === 0
+  }
 }
 
 
