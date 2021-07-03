@@ -29,7 +29,7 @@ class LinkedList {
       current = this.head
       // iterate till the end of list
       while(current.next) {
-        current = this.next
+        current = current.next
       }
       current.next = node
     }
@@ -92,7 +92,7 @@ class LinkedList {
       }
       this.size--
     }
-  }  
+  }
 
   /*
   Removes the given element from the linked list
@@ -155,16 +155,20 @@ class LinkedList {
   }
 }
 
+module.exports = {
+  LinkedList, Node
+}
+
 
 
 // Test Cases
-const ll = new LinkedList();
-ll.add(15)
-ll.add(20)
-ll.insertAt(13, 1)
-ll.insertAt(54, 3)
+// const ll = new LinkedList();
+// ll.add(15)
+// ll.add(20)
+// ll.insertAt(13, 1)
+// ll.insertAt(54, 3)
+// // ll.displayLinkedList()
+// // ll.removeFrom(3)
+// ll.removeElement(20)
 // ll.displayLinkedList()
-// ll.removeFrom(3)
-ll.removeElement(20)
-ll.displayLinkedList()
-console.log(ll.indexOf(28))
+// console.log(ll.indexOf(28))
