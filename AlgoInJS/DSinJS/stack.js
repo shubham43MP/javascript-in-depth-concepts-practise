@@ -1,9 +1,17 @@
-// Stack is a Linear DS that behaves in a way called as Last In First Out (LIFO)
 
+// Stack is a Linear DS that behaves in a way called as Last In First Out (LIFO)
 class Stack {
   constructor(){
     this.items = []
   }
+
+  /*
+  Returns the length of the stack
+  */
+ length() {
+   return this.items.length()
+ }
+
   /*
   Adds data to the end of the Stack
   */
@@ -30,7 +38,7 @@ class Stack {
   Returns true if stack is empty
   */
   isEmpty() {
-   return this.items.length === 0 
+   return this.items.length === 0
   }
 
   /*
@@ -41,9 +49,24 @@ class Stack {
       console.log(this.items[iterator])
     }
   }
+
+  /*
+  Direct Input
+  */
+  stackInput(inputArray) {
+    if((Array.isArray(inputArray)) && inputArray.length > 0){
+      this.items = inputArray
+    }
+    else console.log('Please enter a valid input')
+  }
 }
 
-const stack = new Stack()
-stack.push(5)
-stack.push(8)
-stack.displayStack()
+module.exports = {
+  Stack
+}
+
+
+// const stack = new Stack()
+// stack.push(5)
+// stack.push(8)
+// stack.displayStack()
