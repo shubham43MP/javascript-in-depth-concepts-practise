@@ -140,6 +140,24 @@ class DoublyLinkedList {
     }
     return result
   }
+
+  /*
+  Returns the position of the given element in the list. 1 means the first element. Returns -1
+  if not found
+  */
+ indexOf(element){
+  let currentNode = this.head;
+  let iterator = 1;
+  while(iterator <= this.length) {
+    if(currentNode.element === element) {
+      return iterator
+      break;
+    }
+    currentNode = currentNode.next;
+    iterator++
+  }
+  return -1
+ }
 }
 
 const dll = new DoublyLinkedList()
@@ -153,3 +171,4 @@ dll.insert(54,4)
 dll.removeAt(4)
 console.log('Array is ', dll.toArray())
 dll.displayDoublyLinkedList()
+console.log('Index of 23 is ', dll.indexOf(23))
