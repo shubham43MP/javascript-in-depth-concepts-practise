@@ -8,9 +8,9 @@ https://learnersbucket.com/tutorials/data-structures/doubly-linked-list-implemen
 
 class DLLNode {
   constructor(element){
-    this.prevElementRef = null;
+    this.prev = null;
     this.element = element;
-    this.nextElementRef = null;
+    this.next = null;
   }
 }
 
@@ -28,10 +28,11 @@ class DoublyLinkedList {
    if(this.length > 0) {
      let currentNode = this.head
      let str = ''
-     while(currentNode.nextElementRef !== null) {
-      str += `${ currentNode.element }-->`
-      currentNode = currentNode.nextElementRef;
+     while(currentNode.next) {
+       str += `${ currentNode.element }-->`
+       currentNode = currentNode.next;
      }
+     str+=`${ currentNode.element }`
      console.log(str)
    } else {
      console.log('Linked list is empty')
@@ -46,11 +47,10 @@ class DoublyLinkedList {
     if(this.length === 0) {
       this.head = node;
       this.tail = node;
-      console.log(this.head)
     }
     else {
       this.tail.next = node
-      node.prevElementRef = this.tail;
+      node.prev = this.tail;
       this.tail = node
     }
     this.length++
@@ -61,4 +61,5 @@ const dll = new DoublyLinkedList()
 dll.append(45)
 dll.append(46)
 dll.append(47)
+dll.append(23)
 dll.displayDoublyLinkedList()
