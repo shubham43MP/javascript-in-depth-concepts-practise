@@ -158,6 +158,21 @@ class DoublyLinkedList {
   }
   return -1
  }
+
+ /*
+  Returns true if the list is empty, false otherwise.
+ */
+ isEmpty() {
+   return this.size() === 0
+ }
+
+
+  /*
+  Returns the size of the list
+  */
+  size() {
+    return this.length;
+  }
 }
 
 const dll = new DoublyLinkedList()
