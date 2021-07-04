@@ -55,6 +55,39 @@ class DoublyLinkedList {
     }
     this.length++
   }
+
+  /*
+  Removes an element from the given position in the list and returns it. Provide the index from 0
+  */
+ removeAt(index) {
+   if(index < 0 || index > this.length) {
+     return 'Invalid  Input'
+   }
+   if( index === 0) {
+     this.head = this.head.next;
+     this.length--;
+     return
+   } else if (index === this.length-1) {
+    this.tail = this.tail.prev;
+    this.tail.next = null;
+    this.length--;
+    return;
+   } else if(index > 0 && index < this.length-1) {
+     let currentNode = this.head;
+     let iterator = 0;
+     while(iterator < index){
+      currentNode = currentNode.next;
+      iterator++
+     }
+     let prevNode = currentNode.prev;
+     let nextNode = currentNode.next;
+     prevNode.next = nextNode;
+     nextNode.prev = prevNode;
+     this.length--;
+   } else {
+     console.log('Check the input, Didnt remove')
+   }
+ }
 }
 
 const dll = new DoublyLinkedList()
@@ -62,4 +95,6 @@ dll.append(45)
 dll.append(46)
 dll.append(47)
 dll.append(23)
+dll.append(6)
+dll.removeAt(3)
 dll.displayDoublyLinkedList()
