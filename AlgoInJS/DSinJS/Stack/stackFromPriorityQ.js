@@ -11,7 +11,7 @@
   can have the LIFO System
 */
 
-import { QueueElement, PriorityQueue } from './priorityQueue'
+import { QueueElement, PriorityQueue } from '../Queue/priorityQueue'
 
 class Stack {
   constructor() {
