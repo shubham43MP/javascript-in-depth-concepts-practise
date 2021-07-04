@@ -121,10 +121,24 @@ class DoublyLinkedList {
       currentNode.prev = node;
       prevNode.next = node;
       this.length++;
-
     } else {
      console.log('Check the input,Insert Failed')
    }
+  }
+
+  /*
+  Converts the linked list to the array and returns it
+  */
+  toArray() {
+    let currentNode = this.head;
+    let iterator = 0;
+    const result= []
+    while(iterator < this.length) {
+      result.push(currentNode.element)
+      currentNode = currentNode.next;
+      iterator++
+    }
+    return result
   }
 }
 
@@ -137,4 +151,5 @@ dll.append(6)
 dll.insert(42, 3)
 dll.insert(54,4)
 dll.removeAt(4)
+console.log('Array is ', dll.toArray())
 dll.displayDoublyLinkedList()
