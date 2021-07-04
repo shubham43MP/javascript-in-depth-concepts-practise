@@ -57,25 +57,25 @@ class DoublyLinkedList {
   }
 
   /*
-  Removes an element from the given position in the list and returns it. Provide the index from 0
+  Removes an element from the given position in the list and returns it. Provide the position from 1
   */
- removeAt(index) {
-   if(index < 0 || index > this.length) {
+ removeAt(position) {
+   if(position < 1 || position > this.length) {
      return 'Invalid  Input'
    }
-   if( index === 0) {
+   if( position === 1) {
      this.head = this.head.next;
      this.length--;
      return
-   } else if (index === this.length-1) {
+   } else if (position === this.length) {
     this.tail = this.tail.prev;
     this.tail.next = null;
     this.length--;
     return;
-   } else if(index > 0 && index < this.length-1) {
+   } else if(position > 1 && position < this.length) {
      let currentNode = this.head;
      let iterator = 0;
-     while(iterator < index){
+     while(iterator < position){
       currentNode = currentNode.next;
       iterator++
      }
@@ -88,6 +88,44 @@ class DoublyLinkedList {
      console.log('Check the input, Didnt remove')
    }
  }
+
+  /*
+  Adds an element at the given position in the list. Position starts from 1
+  */
+  insert(element, position) {
+    if(position < 1 || position > this.length) {
+      return 'Invalid  Input'
+    }
+    let node = new DLLNode(element)
+    // Insert at start
+    if(position === 1) {
+      let currentNode = this.head;
+      node.next = currentNode;
+      currentNode.prev = node;
+      this.head = node;
+      this.length++;
+    } else if ( position === this.length) {
+      this.append(element)
+      this.length++;
+    } else if ( position > 1 && position < this.length ) {
+      let currentNode = this.head;
+      let iterator = 0;
+      let prevNode;
+      while(iterator < position -1){
+        prevNode = currentNode;
+        currentNode = currentNode.next;
+        iterator++;
+      }
+      node.next = currentNode;
+      node.prev = prevNode;
+      currentNode.prev = node;
+      prevNode.next = node;
+      this.length++;
+
+    } else {
+     console.log('Check the input,Insert Failed')
+   }
+  }
 }
 
 const dll = new DoublyLinkedList()
@@ -96,5 +134,7 @@ dll.append(46)
 dll.append(47)
 dll.append(23)
 dll.append(6)
-dll.removeAt(3)
+dll.insert(42, 3)
+dll.insert(54,4)
+dll.removeAt(4)
 dll.displayDoublyLinkedList()
