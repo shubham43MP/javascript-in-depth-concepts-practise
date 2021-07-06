@@ -49,7 +49,10 @@ function mergeSort(arr, l, r, size) {
   }
 }
 
-let collection = [ 445, 1, 4, 78, 6, 89, 56, -20, 32, 12, 115, -8, 207, -17]
+const driverMS = (collection) => {
+  return mergeSort(collection, 0, collection.length-1)
+}
 
-const sortedArray = mergeSort(collection, 0, collection.length-1)
-console.log('Sorted Array ', sortedArray , collection.length, sortedArray.length)
+module.exports = {
+  driverMS
+}
