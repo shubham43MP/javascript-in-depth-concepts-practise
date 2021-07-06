@@ -6,11 +6,14 @@ arr.forEach(element => {
   else if(max < element) max = element;
 });
 
-// T(O) = n-1
+// T(n) = n-1
 
 console.log('Minimum element is ',  min, 'and Max element is ', max)
 
-// Divide and Conquer Method
+/*
+  Tournament Method
+  Divide and Conquer Strategy
+*/
 
 class MaxMinPair {
   constructor() {
@@ -52,3 +55,54 @@ class MaxMin {
 const maxMin = new MaxMin()
 const result = maxMin.pairMaxMin(arr, 0, arr.length - 1)
 console.log('Post recursion Minimum element is ',  result.min, 'and Max element is ', result.max)
+
+// T(n) = 3n/2 -2 (Again its O(n))
+
+/*
+  Best Method : Compare in pairs
+  It is the best of 3 in O(n)
+  If total elements are odd, initialise min and max as first element
+  if total elements are even, initialise min and max as min and max of two
+*/
+function getMinMaxByPair(arr, arraySize, start, end, maxMinPair = null) {
+  if( start === 0) {
+    const maxMinPair = new MaxMinPair()
+    if(arraySize % 2 === 0) {
+      const { max, min } = getMaxOfTwo(arr[0], arr[1])
+      maxMinPair.max = max;
+      maxMinPair.min = min;
+      start += 2
+      end += 2
+    } else {
+      maxMinPair.max = arr[0]
+      maxMinPair.min = arr[0]
+      start++
+      end++
+    }
+    return getMinMaxByPair(arr, arraySize, start, end, maxMinPair)
+  } else if( start > 0 && ((arraySize) > end)) {
+    const { max, min } = getMaxOfTwo(arr[start], arr[end])
+    if(maxMinPair.max < max) maxMinPair.max = max
+    if(maxMinPair.min > min)  maxMinPair.min = min
+    start += 2
+    end += 2
+    return getMinMaxByPair(arr, arraySize, start, end, maxMinPair)
+  } else {
+    return maxMinPair
+  }
+}
+
+function getMaxOfTwo(x, y) {
+  let max; let min;
+  if(x > y) {
+    max = x;
+    min = y;
+  } else {
+    max = y;
+    min = x;
+  }
+  return { max, min }
+}
+
+const minMaxPair = getMinMaxByPair(arr, arr.length, 0, 1)
+console.log('Post Pair compare Minimum element is ',  minMaxPair.min, 'and Max element is ', minMaxPair.max)
