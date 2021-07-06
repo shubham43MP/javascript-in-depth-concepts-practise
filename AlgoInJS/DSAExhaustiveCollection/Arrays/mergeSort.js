@@ -54,5 +54,6 @@ const driverMS = (collection) => {
 }
 
 module.exports = {
-  driverMS
+  driverMS,
+  getMaxMinOfTwo
 }
