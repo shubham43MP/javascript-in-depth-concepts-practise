@@ -10,6 +10,7 @@ const kthMaxMin = (collection, k) => {
   if(k > collection.length) console.log('Input invalid')
   else {
     const sortedArray = mergeSort(collection)
+    // Point to note here is that our MergeSort implementation is still not good than the .sort() of JS
     return { kthMax: sortedArray[collection.length - k], kthMin: sortedArray[k - 1] }
   }
 }
