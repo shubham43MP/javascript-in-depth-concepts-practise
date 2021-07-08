@@ -1,4 +1,4 @@
-function Car(model, color) { 
+function Car(model, color) {
   this.model = model
   this.color = color
 }
@@ -37,3 +37,12 @@ console.log('Car Class Color ', carClassObject.getCarColor())
 console.log('See whether Class color updated? ', CarClass.getCarColorModel() )
 
 // Looks similar?? But stll classes have various nuances and they are not very similar
+// There are important differences.
+
+// First, a function created by class is labelled by a special internal property [[IsClassConstructor]]: true. So it’s not entirely the same as creating it manually.
+class User {
+  constructor() {}
+}
+
+alert(typeof User); // function
+User(); // Error: Class constructor User cannot be invoked without 'new'
