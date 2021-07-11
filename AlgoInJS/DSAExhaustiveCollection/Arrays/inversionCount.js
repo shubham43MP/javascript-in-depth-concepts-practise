@@ -23,6 +23,8 @@ function inversionCount(inputArray) {
 
 const inputArray = [1, 20, 6, 7, 5, 8, 11, 3]
 
+
+// Method 2 - Merge Sort. T(n) = N*log(N)
 class MergeSort {
   constructor() {
     this.inversionCount = 0
