@@ -7,7 +7,7 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 [LEET CODE]
  */
 
-const prices = [7,1,5,3,6,4]
+const prices = [100, 180, 260, 310, 40, 535, 695]
 
 
 // Brute Force T(n) = N*N
