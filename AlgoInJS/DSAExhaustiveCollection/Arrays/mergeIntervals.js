@@ -5,7 +5,7 @@
 
 // TCs [[1,4],[0,2],[3,5]]
 
-const intervals = [[1,3],[2,6],[8,10],[15,18]]
+const intervals = [[2,3],[5,5],[2,2],[3,4],[3,4]]
 
 function checkOverlapReturnMerged(pair1, pair2) {
   if(pair1 && pair2 && pair1[0] <= pair2[1] && pair1[1] >= pair2[0]) {
@@ -36,13 +36,14 @@ function mergeIntervals(intervals) {
 
 // Good Solution involves sorting and then doing what we were doing earlier.
 
-function nergeIntervalsWithSorting(intervals) {
-  intervals.sort()
+function mergeIntervalsWithSorting(intervals) {
+  intervals.sort( (x, y) => x - y)
+  console.log('intervalsss', intervals)
   let index = 0;
   while( index < intervals.length ) {
     const res = checkOverlapReturnMerged(intervals[index], intervals[index+1])
     if(res.length > 0) {
-      intervals.splice(index+1, 1)
+      intervals.splice(index + 1, 1)
       intervals[index] = res
       index = 0
     }
@@ -50,3 +51,5 @@ function nergeIntervalsWithSorting(intervals) {
   }
   return intervals  
 }
+
+console.log('FINAL =====>', mergeIntervalsWithSorting(intervals))
