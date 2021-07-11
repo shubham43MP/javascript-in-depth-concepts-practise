@@ -21,4 +21,62 @@ function inversionCount(inputArray) {
   return inversionCount
 }
 
-const inputArray = [10, 10, 10]
+const inputArray = [1, 20, 6, 7, 5, 8, 11, 3]
+
+class MergeSort {
+  constructor() {
+    this.inversionCount = 0
+  }
+
+  getIC() {
+    return this.inversionCount
+  }
+
+  merge(left = [], right = []) {
+    let arr = []
+    let inversionCount = 0
+    while (left.length && right.length) {
+        if (left[0] < right[0]) {
+            arr.push(left.shift())
+        } else {
+            this.inversionCount = this.inversionCount + left.length
+            arr.push(right.shift())
+        }
+    }
+    return { resultant: [ ...arr, ...left, ...right ] }
+  }
+
+  mergeSort(arr, l, r) {
+  if(r>=l){
+    if(r===l) {
+     if(arr[l]) return { resultant: [arr[l]]}
+     return { resultant: [] }
+    } else {
+        const mid = Math.floor((l + r)/2)
+        const left = this.mergeSort(inputArray, l , mid)
+        const right = this.mergeSort(inputArray, mid + 1, r)
+        const result = this.merge(left.resultant, right.resultant)
+        const { resultant = [] } = result
+        return { resultant }
+    }
+  }
+}
+}
+
+const inversion = new MergeSort()
+inversion.mergeSort()
+
+function inversionCountWithMS (inputArray) {
+  const inversion = new MergeSort()
+  const res = inversion.mergeSort(inputArray, 0, inputArray.length)
+  return { resultant: res.resultant, inversionCount: inversion.inversionCount }
+}
+
+console.time('bruteeeeeeeeeee')
+console.log('Brute force iversion count ==>', inversionCount(inputArray) ) //4.5ms
+console.timeEnd('bruteeeeeeeeeee')
+
+
+console.time('mergeeeeeee')
+console.log('Merge Sort iversion count ==>', inversionCountWithMS(inputArray).inversionCount ) //0.19ms
+console.timeEnd('mergeeeeeee')
