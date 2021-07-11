@@ -4,8 +4,8 @@
  * https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays5135/1
  */
 
-let arr1 = [1, 3, 5, 7]
-let arr2 = [0, 2, 6, 8, 9]
+let arr1 = [1, 5, 9, 10, 15, 20]
+let arr2 = [2, 3, 8, 13]
 const N = arr1.length
 const M = arr2.length
 
@@ -30,22 +30,55 @@ function mergeLikeInsertionSort(arr1, arr2, N, M) {
 // T(n) = 
 
 function gap(input) {
+  if(input === 1 ) return 0
   return Math.ceil(input/2)
+}
+
+function getTraversalPoint(arr1, arr2, N, M, index) {
+  if(index < N) return index
+  if(index >= N && index < N+M) return index-N
 }
 
 function mergeWithGapMethod(arr1, arr2, N, M) {
   let gapVal = gap(N+M)
-  let traverseInitialIndex = 0
-  let traverseSecondIndex = 0
-  if(gapVal <= N && traverseSecondIndex <=) traverseSecondIndex = gapVal
-  else traverseSecondIndex = Math.abs(gapVal-M)
-  let index = 0
-  while(index < N+M) {
-    if(index < N) console.log(arr1[index])
-    if(index >= N && index < N+M) console.log(arr2[index - N])
-    index++
+  while ( gapVal >= 1 ) {
+    let traverseInitialIndex = 0
+    let traverseSecondIndex = gapVal
+    let index = 0
+     while(index < N+M) {
+    console.log('AAAAAAAAAAAAAAAAA', traverseInitialIndex, traverseSecondIndex, gapVal)
+    if(traverseInitialIndex < N && traverseSecondIndex < N) {
+      if(arr1[traverseInitialIndex] > arr1[traverseSecondIndex]) {
+        let temp = arr1[traverseInitialIndex]
+        arr1[traverseInitialIndex] = arr1[traverseSecondIndex]
+        arr1[traverseSecondIndex] = temp;
+      }
+      console.log('111111111111111111111', arr1, arr2, gapVal)
+    }
+    else if(traverseInitialIndex < N && traverseSecondIndex < N + M && traverseSecondIndex >= N) {
+      if(arr1[traverseInitialIndex] > arr2[traverseSecondIndex - N - 1]) {
+      let temp = arr1[traverseInitialIndex]
+      arr1[traverseInitialIndex] = arr2[traverseSecondIndex - N - 1]
+      arr2[traverseSecondIndex - N - 1] = temp;
+    }
+    }
+    else if(traverseInitialIndex > N && traverseSecondIndex < N + M && traverseInitialIndex > N){
+      console.log('33333333333333333333333')
+      if(arr2[traverseInitialIndex - N - 1] > arr2[traverseSecondIndex - N - 1 ]) {
+      let temp = arr2[traverseInitialIndex - N - 1]
+      arr2[traverseInitialIndex - N - 1] = arr2[traverseSecondIndex - N - 1]
+      arr2[traverseSecondIndex - N - 1] = temp;
+    }
   }
-  
+    index++
+    traverseInitialIndex++
+    traverseSecondIndex++
+  }
+  gapVal = gap(gapVal)
+}
+
+console.log('Result ', arr1, arr2)
+ 
 }
 
 mergeWithGapMethod(arr1, arr2, N, M)
