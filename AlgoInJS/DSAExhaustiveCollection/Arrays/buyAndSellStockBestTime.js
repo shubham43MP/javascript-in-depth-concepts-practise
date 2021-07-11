@@ -24,5 +24,36 @@ function bestTimeToBuyAndSellAndMaxPrice(prices) {
 }
 
 // Efficient method
+// We will first find difference between each element and then use Kadane's Algo to find the max sum contiguous array
+// SIMULTANEOOUSLY
+// T(n) = N
 
-console.log('FINALITY ==> ', bestTimeToBuyAndSellAndMaxPrice(prices))
+
+function bestTimeToBuyAndSellMaxPriceViaKadane(prices) {
+  // We will transform current array to difference array
+  let contiguousStart = 0;
+  let contiguousEnd = 0;
+  let max_so_far = 0;
+  let max_end_here = 0;
+
+  // Kadane's Algorithm Maneuver
+  for (let index = 0; index < prices.length; index++) {
+    prices[index] = prices[ index + 1 ] - prices[ index ]
+    if(prices[index]){
+      max_end_here = max_end_here + prices[index];
+      if(max_end_here < 0) {
+        contiguousStart = index + 1
+        max_end_here = 0
+      }
+      if(max_so_far < max_end_here){
+        max_so_far = max_end_here
+        contiguousEnd = index
+      }
+    }
+  }
+  const startIndex = contiguousStart
+  const endIndex = contiguousEnd + 1
+  return max_so_far
+}
+
+console.log('Maximum Profit is ==> ', bestTimeToBuyAndSellMaxPriceViaKadane(prices))
