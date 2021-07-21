@@ -13,7 +13,7 @@ const input = [1, 2, 3, -4, -1, 4, 5, -8, 7 , -15 ]
  * @param {Array} input 
  * @returns {Array} Rearranged data of alternate positives and negatives
  * 
- * Note this doesnot maintain the order of appearance
+ * Note this doesnot maintain the order of appearance with the Quick Sort Algorithm
  */
 
 function rearrangePositiveNegatives(input) {
