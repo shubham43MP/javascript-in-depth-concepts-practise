@@ -86,5 +86,5 @@ function cyclicallyRotate(input, startIndex, endIndex) {
   return input
 }
 
-// console.log('Resultant Array is ', rearrangePositiveNegatives(input))
+console.log('Resultant Array is ', rearrangePositiveNegatives(input))
 console.log('Resulting Array without extra space is ', rearrangePositiveNegativesInOrder(arr))
