@@ -14,6 +14,14 @@ const arr2 = [6, 7, 20, 80, 100, 10, 5]
 const arr3 = [3, 4, 15, 20, 30, 70, 80, 120, 5, 10]
 
 // Using hash map
+
+/**
+ * 
+ * @param {arr1} arr1 
+ * @param {arr2} arr2 
+ * @param {arr3} arr3 
+ * @returns Array of common elements in above given arrays using hash map
+ */
 function commonElements(arr1, arr2, arr3) {
   let commonFinder1 = {}
   for (let index = 0; index < arr1.length; index++) {
