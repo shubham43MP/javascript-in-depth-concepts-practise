@@ -4,9 +4,11 @@
  * Number of positive and negative numbers need not be equal.
  * If there are more positive numbers they appear at the end of the array.
  * If there are more negative numbers, they too appear in the end of the array.
+ * [LEET CODE/ GFG]
  */
 
 const input = [1, 2, 3, -4, -1, 4, 5, -8, 7 , -15 ]
+const arr = [1, 2, 3, -4, -1, 4, 5, -8, 7 , -15 ]
 
 /**
  * 
@@ -39,4 +41,50 @@ function rearrangePositiveNegatives(input) {
   return input
 }
 
-console.log('Resultant Array is ', rearrangePositiveNegatives(input))
+/**
+ * 
+ * @param {Array} input 
+ * @returns {Array}
+ * 
+ * Gives the array output for with alternate positives and negatives
+ * 
+ * This Approach uses a constant Space O(1) but with T(n) = N^2
+ */
+function rearrangePositiveNegativesInOrder(input) {
+  let elementReplacedIndex = 0
+  for (let index = 0; index < input.length; index++) {
+    if(input[index] < 0) {
+      const temp = input[index]
+      for (let k = index; k >= elementReplacedIndex; k--) {
+        input[k] = input[k - 1]
+        if(k === elementReplacedIndex) input[k] = temp
+      }
+      elementReplacedIndex++
+    }
+  }
+  let i = 1
+  while ( input[i] < 0) {
+    let j = elementReplacedIndex
+    const temp = input[j]
+    for (let k = j; k >= i; k--) {
+      input[k] = input[k - 1]
+      if(k === i) input[k] = temp
+    }
+    i+=2;
+    elementReplacedIndex++;
+  }
+  return input
+}
+
+function cyclicallyRotate(input, startIndex, endIndex) {
+  input[startIndex] = input[endIndex]
+  for (let index = startIndex + 1; index < endIndex; index++) {
+    const temp = input[index + 1]
+    input[index] = input[index + 1]
+    input[index + 1] = temp
+  }
+  return input
+}
+
+// console.log('Resultant Array is ', rearrangePositiveNegatives(input))
+console.log('Resulting Array without extra space is ', rearrangePositiveNegativesInOrder(arr))
