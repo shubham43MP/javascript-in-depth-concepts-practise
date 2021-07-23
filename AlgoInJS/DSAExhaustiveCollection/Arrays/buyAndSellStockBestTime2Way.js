@@ -44,4 +44,31 @@ function buyAndSellStockBestTime(input, N) {
   return resultant[N-1]
 }
 
+/**
+ * 
+ * @param {Array} input 
+ * @param {Number} N 
+ * @returns 
+ * 
+ * Maximum Profit
+ * 
+ * T(n) = O(N)
+ * 
+ * S(n) = O(1)
+ */
+function buyAndSellStockBestTime2WaySimple(input, N) {
+  let profit1 = 0
+  let profit2 = 0
+  let buy1 = Number.MAX_VALUE
+  let buy2 = Number.MAX_VALUE
+  for (let i = 0; i < N; i++) {
+    buy1 = Math.min(buy1, input[i]);
+    profit1 = Math.max(profit1, input[i] - buy1)
+    buy2 = Math.min(buy2, input[i] - profit1);
+    profit2 = Math.max(profit2, input[i] - buy2);
+  }
+  return profit2
+}
+
 console.log('Maximum Profit is ', buyAndSellStockBestTime(input, input.length))
+console.log('Maximum Profit is ', buyAndSellStockBestTime2WaySimple(input, input.length))
