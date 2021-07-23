@@ -43,4 +43,9 @@ function arraySubsetCheck(arr1, arr2) {
   return isSubSet ? 'Yes' : 'No'
 }
 
+/**
+ * Note: Brute force approach involve checking all elements of the arr 2 in arr 1 and break if not Found
+ * T(n) = O(N*N)
+ */
+
 console.log('Is Subset ? ', arraySubsetCheck(arr1, arr2))
