@@ -8,7 +8,7 @@
 // const input = [2,6,1,9,4,5,3] // [ 1, 2, 3, 4, 5, 6 ]
 // const input = [ 1, 8, 0, 2, 5, 3, 6, 5, 1, 4 ] // 0 1 1 2 3 4 5 5 6
 // const input = [ 0, 1, 2, 3, 15, 16, 17 , 18, 19 ] // 0 1 1 2 3 4 5 5 6
-const input = [ 6, 6, 2, 3, 1, 4, 1, 5, 6, 2, 8, 7, 4, 2, 1, 3, 4, 5, 9, 6 ]
+const input = [ 6, 6, 2, 3, 1, 4, 1, 5, 6, 2, 8, 7, 4, 2, 1, 3, 4, 5, 9, 6 ] // 1 2 3 4 5 6 7 8 9 (unique)
 
 /**
  * 
@@ -18,7 +18,7 @@ const input = [ 6, 6, 2, 3, 1, 4, 1, 5, 6, 2, 8, 7, 4, 2, 1, 3, 4, 5, 9, 6 ]
  * 
  * T(n) = N*logN
  * 
- * S(n) = O(N) // Majority of cases will be less then O(N)
+ * S(n) = O(N) For Majority of cases will be less then O(N)
  */
 function longestPossibleSubsequence(input) {
   let input = [...new Set(items)] // Makes all ARray Elements Unique
