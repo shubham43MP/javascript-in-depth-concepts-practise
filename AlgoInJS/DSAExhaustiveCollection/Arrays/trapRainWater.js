@@ -1,13 +1,14 @@
 /**
+ * [GFG ACCEPTED]
  * Given an array arr[] of N non-negative integers representing the height of blocks.
  * If width of each block is 1, compute how much water can be trapped between the blocks during the rainy season
  */
 
-// const arr = [3,0,0,2,0,4] // 10
+const arr = [3,0,0,2,0,4] // 10
 // const arr = [2, 0, 2] // 2
 // const arr = [3, 0, 5, 0, 2, 0, 4] // 13
 // const arr = [3, 0, 5, 1, 6, 2, 1, 4] // 12
-const arr = [7, 4, 0, 9] // 10
+// const arr = [7, 4, 0, 9] // 10
 const n = arr.length
 
 
@@ -76,5 +77,42 @@ function trappingWaterOneArray(arr, n) {
     return water
 }
 
+/**
+ * 
+ * @param {Array} arr 
+ * @param {Number} n 
+ * @returns
+ * 
+ * The Volume in units of the trapped water using constant space
+ * 
+ * T(n) = O(N)
+ * 
+ * S(N) = O(1)
+ */
+function trappingWaterConstantSpace(arr, n) {
+    let low = 0
+    let high = n - 1
+    let leftMax = 0
+    let rightMax = 0
+    let result = 0
+    while (low <= high) {
+      if(arr[low] < arr[high]) {
+        if(arr[low] > leftMax) leftMax = arr[low]
+        else result += leftMax - arr[low]
+        low++
+      }
+      else {
+        if(arr[high] > rightMax){
+          rightMax = arr[high]
+        } else {
+          result += rightMax - arr[high]
+        }
+        high --
+      }      
+    }
+    return result
+}
+
 console.log('Trapped Rainwater is ', trappingWater(arr, n))
 console.log('Trapped Rainwater 1 array is ', trappingWaterOneArray(arr, n))
+console.log('Trapped Rainwater constant space is ', trappingWaterConstantSpace(arr, n))
