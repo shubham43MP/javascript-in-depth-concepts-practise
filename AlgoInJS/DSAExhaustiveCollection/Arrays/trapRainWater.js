@@ -6,7 +6,8 @@
 // const arr = [3,0,0,2,0,4] // 10
 // const arr = [2, 0, 2] // 2
 // const arr = [3, 0, 5, 0, 2, 0, 4] // 13
-const arr = [3, 0, 5, 1, 6, 2, 1, 4] // 12
+// const arr = [3, 0, 5, 1, 6, 2, 1, 4] // 12
+const arr = [7, 4, 0, 9] // 10
 const n = arr.length
 
 
