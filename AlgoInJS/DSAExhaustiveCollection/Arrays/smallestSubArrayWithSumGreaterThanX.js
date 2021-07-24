@@ -1,4 +1,5 @@
 /**
+ * [GFG ACCEPTED]
  * Given an array of integers (A[])  and a number x, find the smallest subarray with
  * sum greater than the given value
  * Note: The answer always exists. It is guaranteed that x doesn't
@@ -27,7 +28,15 @@
 // ANs : 1
 
 
-
+/**
+ * 
+ * @param {Array} a 
+ * @param {Number} n 
+ * @param {Number} x 
+ * @returns 
+ * 
+ * The smallest subarray size that exist
+ */
 function smallestSubArrayWithSumGreaterThanX(a, n, x) {
   let start = 0
   let end = 0
