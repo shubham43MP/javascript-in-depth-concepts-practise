@@ -5,7 +5,8 @@
 
 // const arr = [3,0,0,2,0,4] // 10
 // const arr = [2, 0, 2] // 2
-const arr = [3, 0, 5, 0, 2, 0, 4] // 13
+// const arr = [3, 0, 5, 0, 2, 0, 4] // 13
+const arr = [3, 0, 5, 1, 6, 2, 1, 4] // 12
 const n = arr.length
 
 
@@ -44,4 +45,35 @@ function trappingWater(arr, n) {
     return water
 }
 
+/**
+ * 
+ * @param {Array} arr 
+ * @param {Number} n 
+ * @returns
+ * 
+ * The Volume in units of the trapped water using only 1 extra array
+ * 
+ * T(n) = O(N)
+ * 
+ * S(N) = O(N)
+ */
+function trappingWaterOneArray(arr, n) {
+    let right = []
+    let max = arr[n-1]    
+    right[n-1] = max
+    for (let i = n-2; i >= 0; i--) {
+      right[i] = Math.max(arr[i], max) 
+      if(right[i] > max) max = right[i]
+    }
+
+    let water = 0
+    max = arr[0]
+    for (let i = 0; i < n; i++) {
+      if(arr[i] > max) max = arr[i]
+      water += (Math.min(max, right[i]) - arr[i])
+    }
+    return water
+}
+
 console.log('Trapped Rainwater is ', trappingWater(arr, n))
+console.log('Trapped Rainwater 1 array is ', trappingWaterOneArray(arr, n))
