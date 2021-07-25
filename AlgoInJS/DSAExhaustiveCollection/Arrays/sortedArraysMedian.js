@@ -5,6 +5,14 @@
 const arr1 = [ 2, 5, 8, 15, 17]
 const arr2 = [ 1, 4, 6, 10, 14]
 
+/**
+ * 
+ * @param {Array} arr1 
+ * @param {Array} arr2 
+ * @returns 
+ * 
+ * Median Value
+ */
 function medianOfSameSizeArray(arr1, arr2) {
   const totalLength = arr1.length + arr2.length
   let startIndex = (totalLength / 2) - 1
@@ -25,7 +33,7 @@ function medianOfSameSizeArray(arr1, arr2) {
     } else {
       if( i === startIndex) {
         median += arr1[leftI]
-        
+
       }
       else if( i === endIndex ) {
         median += arr1[leftI]
