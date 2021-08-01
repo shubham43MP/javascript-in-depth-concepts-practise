@@ -20,6 +20,13 @@ const matrix = [
     [72, 62, 86, 16, 99]
 ]
 
+/**
+ * 
+ * @param {Number} N 
+ * @param {Array} Mat 
+ * @returns
+ * Sorted Matrix
+ */
 function sortedMatrix(N, Mat) {
     const result = []
     for (let k = 0; k < N; k++) {
