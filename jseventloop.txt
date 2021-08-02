@@ -1,6 +1,6 @@
 https://medium.com/swlh/the-javascript-event-loop-explained-98a59c96b285#:~:text=The%20event%20loop%20continuously%20checks,executes%20each%20one%20in%20order.
 
-This also explains JavaScript's single threaded asyn feature
+This also explains JavaScript's single threaded async feature
 
 # First things first
 Web APIs — These are built in browser functions that get sent off to different threads to process
@@ -8,7 +8,10 @@ Message Queue — After the Web API’s have completed, they get sent to the mes
 Heap — Objects (To be executed) are allocated in a heap, a heap denotes our memory.
 
 There are 3 things: Call Stack, Message Queue and WebAPIs
-JS is single threaded but able to perform asynchronously by sending out certain functions to the browser utilizing built in Web API’s. With a message queue available in our event loop we are able to build our applications around a collection of asynchronous callback functions.Thus freeing the runtime to handle our current operations while we wait for the external events to happen.
+JS is single threaded but able to perform asynchronously by sending out certain functions to the browser utilizing built
+ in Web API’s. With a message queue available in our event loop we are able to build our applications around a collection
+ of asynchronous callback functions.Thus freeing the runtime to handle our current operations while we wait for the
+ external events to happen.
 
 Priority :  Call Stack --> Message Queue
 
@@ -26,9 +29,11 @@ customFunc()
 Execution will be 1 --> 2 --> 4 --> B --> A
 
 Async things like setTimeout when pushed to callstack are sent to WebAPIs to begin execution of their timer or simmply waiting.
-When Timer finishes, WebAPI sends the callback function to Message queue to wait till Call STack is isEmptyBindingElement.
+When Timer finishes, WebAPI sends the callback function to Message queue to wait till Call STack is empty.
 
-JavaScript has a message queue that handles certain functions such as our setTimeout function, all user-initiated events like click or keyboard events, fetch responses, and DOM events. The event loop gives priority to the call stack, and it will first process everything in the call stack before it begins to run the message queue.
+JavaScript has a message queue that handles certain functions such as our setTimeout function, all user-initiated events
+like click or keyboard events, fetch responses, and DOM events. The event loop gives priority to the call stack, and it
+will first process everything in the call stack before it begins to run the message queue.
 
-Also Note that the event loop in browser based Javascript are explained above but Nodejs event loop is implemented different
-using Libuv libraru written in C. Dont get tricked on that.
+Also Note that the event loop in browser based Javascript are explained above but Nodejs event loop is implemented
+differently using Libuv library written in C. Dont get tricked on that.

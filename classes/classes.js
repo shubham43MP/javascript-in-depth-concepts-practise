@@ -1,4 +1,4 @@
-function Car(model, color) {
+function Car(model, color) { // Its a constructor function
   this.model = model
   this.color = color
 }
