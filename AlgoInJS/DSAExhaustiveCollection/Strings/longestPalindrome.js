@@ -38,7 +38,7 @@ const longestPalindrome = (S) => {
   while(palindromeIterator < stringLength) {
     for (let k = 0; k <= stringLength - palindromeIterator + 1; k++) {
       const { flag: isPalindrome, subString } = palindrome(S, k, k + palindromeIterator + 1)
-      if( isPalindrome ) {
+      if( isPalindrome && subString.length > maxPalindrome.length ) {
         maxPalindrome = subString
         break
       }
@@ -49,4 +49,9 @@ const longestPalindrome = (S) => {
   return maxPalindrome
 }
 
-console.log('longest palindrome is => ', longestPalindrome('rfkqyuqfjkxy') )
+/**
+ * rfkqyuqfjkxy => r
+ * aaaabbaa => aabbaa
+ * abc => a
+ */
+console.log('longest palindrome is => ', longestPalindrome('abc') )
