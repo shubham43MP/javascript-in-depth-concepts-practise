@@ -77,3 +77,7 @@ const pat = 'ababd' // 10
 solution.KMPAlgorithm(txt, pat)
 // solution.longestPrefixSuffix('joeuljjo')
 solution.longestPrefixSuffix('joeuljjo')
+
+module.exports = {
+  Solution
+}
