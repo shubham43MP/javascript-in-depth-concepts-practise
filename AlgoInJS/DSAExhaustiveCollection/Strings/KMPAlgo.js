@@ -27,6 +27,13 @@
     return pf
   }
 
+  /**
+   *
+   * @param {String} txt
+   * @param {String} pat
+   *
+   * Prints indexes of matching pattern in the string
+   */
   KMPAlgorithm(txt, pat) {
     const pyTable = this.pieTable(pat)
     let j = 0
