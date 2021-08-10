@@ -27,6 +27,14 @@
     }
   }
 
+  /**
+   *
+   * @param {String} txt
+   * @param {String} pat
+   * Outputs the indexes of match
+   *
+   * Efficient than the Naive approach and Average case is less than O(N * M)
+   */
   rabinKarpAlgoStringMatch(txt, pat) {
     // This is also called rolling hash Algorithm
     let M = pat
