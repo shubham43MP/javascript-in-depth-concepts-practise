@@ -34,6 +34,7 @@
       const element = txt[g];
       if(element === pat[j]) {
         if( j === pat.length - 1 ) {
+          console.log('Pattern found at ==> ', g - pat.length)
           j = 0
           continue
         }
