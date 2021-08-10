@@ -14,17 +14,33 @@
   pieTable(pat) {
     let pf = []
     pf[0] = 0
-    let j = 0
-    for (let k = 1; k < pat.length; k++) {
-      if(pat[j] === pat[k]) {
-        pf[k] = pf[k - 1] + 1
+    let i = 0
+    let j = 1
+    while(j < pat.length) {
+      if(pat[i] === pat[j]) {
+        pf[j] = i + 1
+        i++
         j++
       } else {
-        j = 0
-        pf[k] = 0
+        if( i === 0 ) {
+          pf[j] = 0
+          j++
+        } else {
+          i = pf[i - 1]
+        }
       }
     }
     return pf
+  }
+
+  /**
+   *
+   * @param {*} s
+   */
+  longestPrefixSuffix(s) {
+    const correspondingPyTable = this.pieTable(s)
+    console.log('Indiaa => ', correspondingPyTable[s.length - 1], correspondingPyTable)
+    return correspondingPyTable[s.length - 1]
   }
 
   /**
@@ -59,3 +75,5 @@ const solution = new Solution()
 const txt = 'abcabcabcabaababdababd'
 const pat = 'ababd' // 10
 solution.KMPAlgorithm(txt, pat)
+// solution.longestPrefixSuffix('joeuljjo')
+solution.longestPrefixSuffix('joeuljjo')
