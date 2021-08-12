@@ -44,8 +44,24 @@
     }
     return Math.min(rlCount, lrCount)
   }
+
+  // More Enhanced
+  minFlipsToAlternateBinaryAltEvenOdd(S) {
+    let startZero = 0
+    let startOne = 0
+    for (let i = 0; i < S.length; i++) {
+      if(i%2 === 0 && S[i] !== '0') startZero++
+      if ( i%2 === 0 && S[i] !== '1') startOne++
+      if(i%2 === 1 && S[i] !== '0') startOne++
+      if(i%2 === 1 && S[i] !== '1') startZero++
+
+    }
+    return Math.min(startZero, startOne)
+  }
 }
 
 
 const solution = new Solution()
-console.log('Minimum Flips are', solution.minFlipsToAlternateBinary('1011'.split('')))
+const input = '100'
+console.log('Minimum Flips are', solution.minFlipsToAlternateBinary(input.split('')))
+console.log('Minimum Flips are with Aproach 2 ', solution.minFlipsToAlternateBinaryAltEvenOdd(input.split('')))
