@@ -2,7 +2,7 @@
  * Given a string with repeated characters,
  * the task is to find feasibility such that
  * rearrange characters in a string so that no two adjacent characters are same.
- * Done with string porion. The next part is to actually have strings which is related to hash map
+ * Done with string porion. The next part is to actually have strings which is related to Priority Queue and heap
  */
 
  class Solution {
