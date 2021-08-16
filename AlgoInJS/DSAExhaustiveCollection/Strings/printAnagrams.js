@@ -16,11 +16,20 @@
     return hashSum % this.primeModulo
   }
 
+  /**
+   *
+   * @param {String} word
+   * @returns Character sorted word
+   */
+  sortWord(word = '') {
+    if(word) return word.split('').sort().join('')
+    return word
+  }
+
   // Anagram Check
   isAnagram(testString, baseString = '') {
-    if(baseString) {
-      return baseString.split('').sort().join() === testString.split('').sort().join()
-    } else return true
+    if(baseString) return this.sortWord(baseString) === this.sortWord(testString)
+    return true
   }
 
   // With hashing
@@ -44,10 +53,30 @@
       }
     }
   }
+
+  // Method 2 Print Anagram
+  anagramPrint(input) {
+    let sortedMap = {}
+    for (let i = 0; i < input.length; i++) {
+      const element = input[i]
+      if(sortedMap[this.sortWord(element)]) {
+        sortedMap[this.sortWord(element)].push(element)
+        continue
+      }
+      sortedMap[this.sortWord(element)] = [element]
+    }
+    for (const key in sortedMap) {
+      if (Object.hasOwnProperty.call(sortedMap, key)) {
+        const element = sortedMap[key];
+        console.log(element)
+      }
+    }
+  }
 }
 
 
 const solution = new Solution()
 const input = ['act','god','cat','dog','tac']
 solution.anagrams(input)
+solution.anagramPrint(input)
 console.log('Anagram Check for dog and god', solution.isAnagram('dog', 'god'))
