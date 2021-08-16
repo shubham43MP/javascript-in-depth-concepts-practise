@@ -9,7 +9,12 @@
     this.primeModulo = 5003
   }
 
-  // Hash Function
+  /**
+   *
+   * @param {String} str
+   * @returns
+   * Modulo Sum hash of a string
+   */
   hashValue(str) {
     let hashSum = 0
     for (let i = 0; i < str.length; i++) hashSum += str[i].charCodeAt()
@@ -26,13 +31,23 @@
     return word
   }
 
-  // Anagram Check
+  /**
+   *
+   * @param {String} testString
+   * @param {String} baseString
+   * @returns
+   * Anagram check of teststring against base string
+   */
   isAnagram(testString, baseString = '') {
     if(baseString) return this.sortWord(baseString) === this.sortWord(testString)
     return true
   }
 
-  // With hashing
+  /**
+   *
+   * @param {Array<string>} input
+   * Prints anagram group in an array with Hashing
+   */
   anagrams(input) {
     const hashTable = {}
     for (let i = 0; i < input.length; i++) {
@@ -54,7 +69,11 @@
     }
   }
 
-  // Method 2 Print Anagram
+  /**
+   *
+   * @param {Array<string>} input
+   * Prints anagram group in an array with sorting
+   */
   anagramPrint(input) {
     let sortedMap = {}
     for (let i = 0; i < input.length; i++) {
