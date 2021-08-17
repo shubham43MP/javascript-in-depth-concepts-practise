@@ -22,6 +22,27 @@
     }
     return res
   }
+
+  baseCase( S, i, j, res) {
+    if( i === S.length ) return res
+    let prev = S[++i]
+    let curr = S[++j]
+    if(curr !== prev) res += prev
+    return this.baseCase( S, i, j, res)
+  }
+
+  /**
+   *
+   * @param {String} S
+   *
+   * Recursively removes consecutive characters from result string
+  */
+  removeConsecutiveRecursively(S) {
+    let res = ''
+    let i = -1
+    let j = 0
+    return this.baseCase( S, i, j, res)
+  }
 }
 
 
@@ -30,3 +51,4 @@ const S = 'aabccba' // abcba
 // const S = 'geeksforgeeks' // geksforgeks
 // const S = 'aaaaabbbbbb' //ab
 console.log('Result iterativey is => ', solution.removeConsecutiveIterative(S))
+console.log('Result recursively is => ', solution.removeConsecutiveRecursively(S))
