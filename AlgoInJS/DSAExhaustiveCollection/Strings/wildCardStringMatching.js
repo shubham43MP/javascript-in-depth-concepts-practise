@@ -7,6 +7,14 @@
 */
 
  class Solution {
+
+  /**
+   *
+   * @param {String} wcStr
+   * @param {String} testStr
+   *
+   * Returns boolean whether test string matches or not with the wild card str
+   */
   wildCardStringMatch(wcStr, testStr) {
     let wcStrLength = wcStr.length
     let testStrLength = testStr.length
