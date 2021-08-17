@@ -26,5 +26,7 @@
 
 
 const solution = new Solution()
-const S = 'aabb'
-solution.removeConsecutiveIterative(S)
+const S = 'aabccba' // abcba
+// const S = 'geeksforgeeks' // geksforgeks
+// const S = 'aaaaabbbbbb' //ab
+console.log('Result iterativey is => ', solution.removeConsecutiveIterative(S))
