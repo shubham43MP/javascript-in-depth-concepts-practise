@@ -9,6 +9,8 @@ class Solution {
    *
    * @param {Number} n
    * @param {String} seq
+   *
+   * Prints the number of customers who were not able to get computer
    */
   customerSimulation(n, seq) {
     let usedResources = 0
