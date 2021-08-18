@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/search-in-rotated-sorted-array/
  * Integer array is sorted but rotated across a pivot
- * T(n) =
- * S(n)
+ * T(n) = O(log N)
+ * S(n) = O(1)
  */
 
  class Solution {
