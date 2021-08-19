@@ -3,8 +3,8 @@
  * Given a key x,  * we need to find the index value of x if multiple-element exist to return the first
  * occurrence of the key.
  *
- * T(n) =
- * S(n)
+ * T(n) = O(N) but avergae case is still far better than O(n)
+ * S(n) = O(1)
  */
 
  class Solution {
