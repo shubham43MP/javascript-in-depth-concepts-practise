@@ -1,6 +1,8 @@
 /**
  * Given an array Arr[] of size L and a number N, you need to write a program to find if there exists
  * a pair of elements in the array whose difference is N.
+ *
+ * GFG has no acceptance to JS for this. But we are pretty sure the solution would get accepted
  */
 
 
@@ -31,6 +33,10 @@ class Solution {
    * @param {Number} N
    * @returns
    * Whether a pair exists in given arr whose difference equals to N
+   *
+   * T(n) = O(L * log(L))
+   *
+   * S(n) = O(1)
    */
   differencePair(arr, L, N) {
     // Sort the array in L*log(L)
