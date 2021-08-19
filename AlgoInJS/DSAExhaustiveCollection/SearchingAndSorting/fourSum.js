@@ -50,6 +50,48 @@
     if(result.length === 0) return -1
     return result
   }
+
+  checkEntryExists(hashEntry, newEntry) {
+    if(hashEntry.length === 0) return false
+    for (let i = 0; i < hashEntry.length; i++) {
+      const element = hashEntry[i];
+      if(element[0] === newEntry[0]) {
+        if(element[1] === newEntry[1]) {
+          return true
+        }
+      }
+    }
+    return false
+  }
+
+  /**
+   *
+   * @param {Array} arr
+   * @param {Number} n
+   * @param {Number} k
+   *
+   * T(n) = O(N2)
+   *
+   * S(n) = O(N2)
+   */
+  fourSumHashed(arr, n, k) {
+    const hash = {}
+    arr.sort((a,b) => a-b)
+    for (let i = 0; i < n - 1; i++) {
+      for (let j = i + 1; j < n; j++) {
+        const sum = arr[i] + arr[j]
+        if(hash[sum]) {
+          const exists = this.checkEntryExists(hash[sum], [arr[i], arr[j]])
+          if(!exists) hash[sum].push([arr[i], arr[j]])
+          continue
+        } else {
+          hash[sum] = [[arr[i], arr[j]]]
+        }
+      }
+    }
+    // Object.keys(hash) // This hash can be used to find the pairs
+    console.log('HASH => ', hash)
+  }
 }
 
 
@@ -66,3 +108,4 @@ const k = 3
 // const n = arr.length
 // const k = 887
 console.log('Four Sum quadruples are => ', solution.fourSum(arr, n, k))
+console.log('Four Sum quadruples are => ', solution.fourSumHashed(arr, n, k))
