@@ -17,7 +17,7 @@
    *
    * @returns
    *
-   * Prints all the triplet count less than X
+   * Prints all the triplets that sum less than X
    *
    * T(n) = O(N^3)
    *
@@ -36,6 +36,21 @@
       }
     }
   }
+
+  /**
+   *
+   * @param {Array} arr
+   * @param {Number} N
+   * @param {Number} X
+   *
+   * @returns
+   *
+   * Ttriplet count that sum less than X
+   *
+   * T(n) = O(N^2)
+   *
+   * S(n) = O(1)
+   */
 
   tripletCount(arr, n, sum) {
     arr.sort((a, b) => a-b)
