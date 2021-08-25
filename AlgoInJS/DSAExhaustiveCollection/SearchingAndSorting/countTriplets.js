@@ -13,6 +13,14 @@
    * @param {Array} arr
    * @param {Number} N
    * @param {Number} X
+   *
+   * @returns
+   *
+   * Prints all the triplet count less than X
+   *
+   * T(n) = O(N^3)
+   *
+   * S(n) = O(1)
    */
 
   tripletCountNaive(arr, N, X) {
