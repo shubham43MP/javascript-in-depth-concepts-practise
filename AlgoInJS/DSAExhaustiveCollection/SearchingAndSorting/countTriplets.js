@@ -1,4 +1,5 @@
 /**
+ * [GFG ACCEPTED]
  * Given an array arr[] of distinct integers of size N and a sum value X,
  * the task is to find count of triplets with the sum smaller than the given sum value X.
  *
@@ -36,35 +37,32 @@
     }
   }
 
-  tripletCount(arr, N, X) {
+  tripletCount(arr, n, sum) {
     arr.sort((a, b) => a-b)
-    console.log('Array is ==> ', arr)
-    for (let i = 0; i < N-2; i++)  {
+    let count = 0
+    for (let i = 0; i < n-2; i++)  {
       let low = i + 1;
-      let high = N-1;
-      const remainingSum = X -arr[i];
+      let high = n-1;
       while (low < high) {
-        if( arr[low] + arr[high] < remainingSum ) {
-          console.log('Triplet is =>', arr[i], arr[low], arr[high])
-          high--;
-        }
-        if(arr[low] + arr[high] > remainingSum) {
-          high--;
-        }
-        if(arr[low] + arr[high] == remainingSum) {
+        const lowHighSum = arr[i] + arr[low] + arr[high]
+        if( lowHighSum < sum ) {
+          count += high - low
           low++;
         }
+        if(lowHighSum >= sum) high--;
       }
     }
-
   }
 }
 
 
 const solution = new Solution()
-const arr = [5, 1, 3, 4, 7]
+// const arr = [5, 1, 3, 4, 7]
+// const N = arr.length
+// const X = 12
+
+const arr = [-2, 0, 1, 3]
 const N = arr.length
-const X = 12
-// solution.tripletCount(arr, N, X)
-// console.log('This is it => ', solution.pointToPointBSCounting([1, 3, 5, 7], 1 ,3, 7))
-solution.tripletCountNaive(arr, N, X)
+const X = 2
+solution.tripletCount(arr, N, X)
+// solution.tripletCountNaive(arr, N, X)
