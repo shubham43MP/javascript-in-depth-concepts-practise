@@ -19,7 +19,7 @@ function mergeLikeInsertionSort(arr1, arr2, N, M) {
       arr1[index] = arr2[0]
       arr2[0] = temp
     }
-    arr2.sort()    
+    arr2.sort()
   }
   // console.log('Arr1 is ', arr1, ' Arr2 is ', arr2)
 }
@@ -27,7 +27,7 @@ function mergeLikeInsertionSort(arr1, arr2, N, M) {
 // mergeLikeInsertionSort(arr1, arr2, N, M)
 
 // Method 2, Gap Method
-// T(n) = 
+// T(n) =
 
 function gap(input) {
   if(input === 1 ) return 0
@@ -45,7 +45,7 @@ function mergeWithGapMethod(arr1, arr2, N, M) {
     let traverseInitialIndex = 0
     let traverseSecondIndex = gapVal
     let index = 0
-     while(index < N+M) {
+    while(index < N+M) {
     console.log('AAAAAAAAAAAAAAAAA', traverseInitialIndex, traverseSecondIndex, gapVal)
     if(traverseInitialIndex < N && traverseSecondIndex < N) {
       if(arr1[traverseInitialIndex] > arr1[traverseSecondIndex]) {
@@ -78,7 +78,7 @@ function mergeWithGapMethod(arr1, arr2, N, M) {
 }
 
 console.log('Result ', arr1, arr2)
- 
+
 }
 
 mergeWithGapMethod(arr1, arr2, N, M)

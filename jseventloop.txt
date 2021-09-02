@@ -4,7 +4,8 @@ This also explains JavaScript's single threaded async feature
 
 # First things first
 Web APIs — These are built in browser functions that get sent off to different threads to process
-Message Queue — After the Web API’s have completed, they get sent to the message queue to await until the call stack is empty.
+Message Queue(Event Queue) — After the Web API’s have completed, they get sent to the message queue to await until the call stack is empty.
+                It is also called as the event queue.
 Heap — Objects (To be executed) are allocated in a heap, a heap denotes our memory.
 
 There are 3 things: Call Stack, Message Queue and WebAPIs
@@ -33,7 +34,8 @@ When Timer finishes, WebAPI sends the callback function to Message queue to wait
 
 JavaScript has a message queue that handles certain functions such as our setTimeout function, all user-initiated events
 like click or keyboard events, fetch responses, and DOM events. The event loop gives priority to the call stack, and it
-will first process everything in the call stack before it begins to run the message queue.
+will first process everything in the call stack before it begins to run the message queue. Basically it keeps checking the
+callstack and once it finds call stack empty, event loop start executing the things in event queue.
 
 Also Note that the event loop in browser based Javascript are explained above but Nodejs event loop is implemented
 differently using Libuv library written in C. Dont get tricked on that.
