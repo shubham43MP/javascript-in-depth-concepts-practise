@@ -1,0 +1,5 @@
+Big O Asymptotic Analysis is it called in sophisticated language
+
+This analysis is the brahmastra for coding interview
+
+Whats a good code?
