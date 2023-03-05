@@ -18,3 +18,7 @@
 - A function that  utilising the new keyword  as well as the this keyword for purposes of instance or so is a Concturctor function
 - More close to C#, Java, C++ approach.
 - Without the use of new keyword here, the this would point to global object
+
+## Values and Reference Types
+- Value Types: Number, String, Boolean, Symbol, undefined, null (Primitives)
+- Reference Types: Object, Function, Array
