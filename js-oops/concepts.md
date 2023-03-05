@@ -1,6 +1,7 @@
 # JS OOPS
 
 ## Abstraction
+- Hide the details and complexities of a Class and show/expose only the essential properties. See ho to do that in oops-p2.js
 
 ## Encapsuation
 

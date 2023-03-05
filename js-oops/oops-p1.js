@@ -48,6 +48,18 @@ console.log('Constructor property', circleConstructor.constructor)
 console.log('Normal Object Constructor property', circle.constructor)
 
 const x = {} // This is equivalent to  let x = new Object()
+const y = 5 // This is equivalent to  let x = new Number(5)
 
 // Functions are objects
 console.log('Circle is obect', Circle.name)
+
+
+// Adding Property to the object
+circleConstructor.location = { lat: '34.6N' }
+
+console.log('Adding property ', circleConstructor)
+
+// Removing Property to the object
+delete circleConstructor.location
+
+console.log('Removing property ', circleConstructor)
