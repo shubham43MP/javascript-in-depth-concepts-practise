@@ -27,16 +27,27 @@ function createCircle(radius) {
   return circle
 }
 
+const circleFactory = createCircle(5)
+
 createCircle(5).draw()
 
 // Constructor Function
 // the new operator will first set the this scope to the object and then retyrnj the object itself
 function Circle(radius) {
-
   this.radius = radius
   this.draw = function() {
     console.log("Draw from Constructor function")
   }
 }
 
-const another = new Circle(1)
+const circleConstructor = new Circle(1)
+
+// Constructor Property
+console.log('Factroy constructor property', circleFactory.constructor)
+console.log('Constructor property', circleConstructor.constructor)
+console.log('Normal Object Constructor property', circle.constructor)
+
+const x = {} // This is equivalent to  let x = new Object()
+
+// Functions are objects
+console.log('Circle is obect', Circle.name)
