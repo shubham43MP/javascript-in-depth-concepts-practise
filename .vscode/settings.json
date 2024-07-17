@@ -29,6 +29,8 @@
     "javascript": "javascript",
     "typescript": "typescript"
   },
+  "workbench.colorTheme": "Atom One Dark",
+  "editor.fontFamily": "'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace",
 "eslint.alwaysShowStatus": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
