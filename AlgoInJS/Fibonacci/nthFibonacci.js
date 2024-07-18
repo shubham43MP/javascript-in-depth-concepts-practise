@@ -1,4 +1,4 @@
-// nth fibonacci term is represented as: 
+// nth fibonacci term is represented as:
 // Fn = round( (((1+5^1/2)/2)^n)/(5^1/2) )
 
 const n = 12;
@@ -11,7 +11,7 @@ function nthFiboByFormula(n) {
 
 nthFiboByFormula(n)
 
-// This method is least used as it is calculation heavy 
+// This method is least used as it is calculation heavy
 
 //Fast Doubling Method:
 /*
@@ -19,10 +19,10 @@ We will use following result to calculate nth Fibonacci in O(log(n))
 F2k = Fk(2*(Fk+1) - Fk)
 F2k+1 = square(Fk+1) + square(Fk)
 
-if we have Fk & Fk+1, we can have F2k & F2k+1 as well
+if we have Fk & Fk+1, we can have F2k & F2k+1 as well. This is the essence of this formula
 */
 
-// n is coming from above 
+// n is coming from above
 function nthFiboByFastDoubling(n) {
   if (n == 0) return {first: 0, second: 1};
   const p = nthFiboByFastDoubling(n >> 1);
