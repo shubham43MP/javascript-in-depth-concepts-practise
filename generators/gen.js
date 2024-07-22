@@ -1,5 +1,6 @@
 /**
- * Generators can return (“yield”) multiple values, one after another, on-demand. They work great with iterables, allowing to create data streams with ease.
+ * Generators can return (“yield”) multiple values, one after another, on-demand.
+ * They work great with iterables, allowing to create data streams with ease.
  */
 
 function* generateSequence() {
