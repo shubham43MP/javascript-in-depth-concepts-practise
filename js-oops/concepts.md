@@ -23,3 +23,5 @@
 ## Values and Reference Types
 - Value Types: Number, String, Boolean, Symbol, undefined, null (Primitives)
 - Reference Types: Object, Function, Array
+
+## IMP Dont miss the sections of SOLID
