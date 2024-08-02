@@ -87,6 +87,8 @@ function gasStations(gas = [], cost = []) {
       return diff
   })
 
-  if(sum >= 0) return firstPositiveDifference
-  return -1
+    if(sum >= 0) return firstPositiveDifference
+    return -1
 }
+
+console.log('Gass statioinssssss', gasStations([2,3,4], [3,4,3]))
