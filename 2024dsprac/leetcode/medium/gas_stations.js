@@ -91,4 +91,4 @@ function gasStations(gas = [], cost = []) {
     return -1
 }
 
-console.log('Gass statioin', gasStations([2,3,4], [3,4,3]))
+console.log('Gass statioin', gasStations([1,2,3,4,5], [3,4,5,1,2]))
