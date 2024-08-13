@@ -28,7 +28,9 @@
 - Memoization in JS with [Closures](https://scotch.io/tutorials/understanding-memoization-in-javascript)
 
 ## Programming Logics
-- [Event Loop](https://gist.github.com/shubham43MP/d681b985985d3f549647e9f6a681cbcc)
 - [Two Sum JS](https://gist.github.com/shubham43MP/9c5c784260900c2c9960b4d32e5d160e)
 - [Flatten Function](https://gist.github.com/shubham43MP/b619296b1d53aa821339ee34f4cb8436)
 - [Number of Islands Problem](https://gist.github.com/shubham43MP/5d9240013b65cb066b7ceecb7980b842)
+- [Event Loop v1](https://gist.github.com/shubham43MP/d681b985985d3f549647e9f6a681cbcc)
+- [Event Loop v2](/.ismart/assets/v1.png)
+- [Event Loop v3](/.ismart/assets/v2.png)
