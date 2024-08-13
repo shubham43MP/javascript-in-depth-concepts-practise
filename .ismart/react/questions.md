@@ -11,7 +11,7 @@
 - What is a Pure Component ? [with the use shouldComponentUpdate, React.memo]
 - Tell me the life cycle methods and basic ideas over when to use which one ? Name any 2 deprecated lifecycles? componentWillMount, componentWillUpdate, componentWillReceiveProps.
 - Life cycles after this.setState getDerivedStateFromProps,
-- What are controlled VS uncontrolled components ? What are refs in React ? What useRefs does?
+- What are controlled VS uncontrolled components ? What are refs in React ?
 - What is Context in React ? (Prop drilling ?) useContext?
 - What version of React have you worked on ? (if it's the latest, ask questions like what is new ?)
 - What are hooks and what do they solve ?
@@ -36,11 +36,17 @@
 - JSX Transforms in v17? Ans: No need for importing React for JSX Transpilaton.
 - What are the rules of hooks?
 - What do you understand about Single Page Application?
-- Error Boundaries
+- Error Boundaries?
 - useRef?
 - How to exclude a property from Typescript
 - What is the React Server Component Payload (RSC)
 - What is Hydration in SSR?
+- What pattern do you follow like how you arrange your code in React ?
+- Typescript ? Why use it ? benefits
+- How will you style your component
+- Give me some tips working on React
+- How can I optimise my react app ? [here](https://www.codementor.io/blog/react-optimization-5wiwjnf9hj)
+
 
 ## React Version Specific v18+?
 - Explain batching before and after v18? Previously state updates were batched only for react event handlers & not under the promises, setTimeout and WebAPI things but now onwards Batching would be for everything.
