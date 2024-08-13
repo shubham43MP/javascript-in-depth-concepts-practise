@@ -19,8 +19,8 @@
 // Output: [1]
 // Explanation: The arrays we are merging are [] and [1].
 // The result of the merge is [1].
-const nums1 = [1,2,3,0,0,0]
-const nums2 = [2,5,6]
+const nums1 = [4,5,6,0,0,0]
+const nums2 = [1,2,3]
 const m = nums1.length
 const n = nums2.length
 let a = 0;
