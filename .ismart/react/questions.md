@@ -20,7 +20,7 @@
 - What is a custom Hook ? examples?
 - REDUX VS CONTEXT API?
 - COUNTER EXAMPLE TO BE SOLVED?
-- What is lazy, suspense
+- What is lazy, suspense?
 
 ## ADVANCED REACT -
 - What are synthetic events in React and why are they used at all ? (Ans: cross browser support)
@@ -54,5 +54,5 @@
 - useDeferredValue hook is more of a debouncing tool for state updates to typing and similar events.
 -  Client and server rendering APIs have changes like REACTDOM.render to createRoot and stuff.
 - What is an Intersection Observer?
-- Accessibility principles in deep to be covered
-- Webpack module federation MUST COVER
+- Accessibility principles in deep to be covered.
+- What is Webpack module federation?
