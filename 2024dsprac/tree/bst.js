@@ -53,6 +53,26 @@ class BinarySearchTree {
       this.preOrderTraversal(root.right)
     }
   }
+
+  inOrderTraversal(root = this.root) {
+    if(root === null) {
+      return
+    } else {
+      this.inOrderTraversal(root.left)
+      console.log(root.value)
+      this.inOrderTraversal(root.right)
+    }
+  }
+
+  postOrderTraversal(root = this.root) {
+    if(root === null) {
+      return
+    } else {
+      this.postOrderTraversal(root.left)
+      this.postOrderTraversal(root.right)
+      console.log(root.value)
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
@@ -63,4 +83,6 @@ bst.insert(10)
 bst.insert(4)
 bst.insert(2)
 bst.displayTreeRaw()
-bst.preOrderTraversal()
+console.log('preOrderTraversal', bst.preOrderTraversal())
+console.log('inOrderTraversal', bst.inOrderTraversal())
+console.log('postOrderTraversal', bst.postOrderTraversal())
