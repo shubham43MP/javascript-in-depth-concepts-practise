@@ -1,4 +1,4 @@
-class GraphNode {
+class TreeNode {
   constructor(value) {
     this.value = value;
     this.right = null;
@@ -20,7 +20,7 @@ class BinarySearchTree {
   }
 
   insert(value) {
-    const treeNode = new GraphNode(value)
+    const treeNode = new TreeNode(value)
     if(this.root === null) {
       this.root = treeNode
     } else {
@@ -73,6 +73,30 @@ class BinarySearchTree {
       console.log(root.value)
     }
   }
+
+  /**
+   * Finds out the minimum value in the tree. This value is the leftmost leaf
+   * @param {TreeNode} root
+   */
+  min(root = this.root) {
+    if(root.left === null) {
+      return root.value
+    } else {
+      return this.min(root.left)
+    }
+  }
+
+  /**
+   * Finds out the maximum value in the tree. This value is the rightmost leaf
+   * @param {TreeNode} root
+   */
+  max(root = this.root) {
+    if(root.right === null) {
+      return root.value
+    } else {
+      return this.max(root.right)
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
@@ -82,7 +106,10 @@ bst.insert(8)
 bst.insert(10)
 bst.insert(4)
 bst.insert(2)
+bst.insert(1)
 bst.displayTreeRaw()
 console.log('preOrderTraversal', bst.preOrderTraversal())
 console.log('inOrderTraversal', bst.inOrderTraversal())
 console.log('postOrderTraversal', bst.postOrderTraversal())
+console.log('Minimum value in BST', bst.min())
+console.log('Maximum value in BST', bst.max())
