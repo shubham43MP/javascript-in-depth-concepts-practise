@@ -97,6 +97,23 @@ class BinarySearchTree {
       return this.max(root.right)
     }
   }
+
+  /**
+   * Depth First Search, also called as the Inorder search.
+   * @param {TreeNode} root
+   */
+  dfsInOrder(value, root = this.root) {
+    if(root) {
+      if(root.value === value) {
+        return value
+      }
+      if(root.value > value) {
+        return this.dfsInOrder(value, root.left)
+      } else {
+        return this.dfsInOrder(value, root.right)
+      }
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
@@ -113,3 +130,4 @@ console.log('inOrderTraversal', bst.inOrderTraversal())
 console.log('postOrderTraversal', bst.postOrderTraversal())
 console.log('Minimum value in BST', bst.min())
 console.log('Maximum value in BST', bst.max())
+console.log('DFS INORDER SEARCH', bst.dfsInOrder(8))
