@@ -15,6 +15,10 @@ class BinarySearchTree {
     return this.root === null
   }
 
+  displayTreeRaw(){
+    console.log('tree', this.root)
+  }
+
   insert(value) {
     const treeNode = new GraphNode(value)
     if(this.root === null) {
@@ -22,18 +26,17 @@ class BinarySearchTree {
     } else {
       this.insertValue(this.root, treeNode)
     }
-
   }
 
   insertValue(root, node){
-    if(root.value < node.value) {
+    if(root.value > node.value) {
       if(root.left === null){
         root.left = node
       } else {
         this.insertValue(root.left, node)
       }
     } else {
-        if(root.right === null){
+      if(root.right === null){
         root.right = node
       } else {
         this.insertValue(root.right, node)
@@ -44,3 +47,9 @@ class BinarySearchTree {
 
 const bst = new BinarySearchTree();
 console.log('Is tree empty', bst.isEmpty())
+bst.insert(5)
+bst.insert(8)
+bst.insert(10)
+bst.insert(4)
+bst.insert(2)
+bst.displayTreeRaw()
