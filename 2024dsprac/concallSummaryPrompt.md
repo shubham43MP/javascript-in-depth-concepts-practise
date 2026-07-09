@@ -736,3 +736,54 @@ These qualitative signals often provide early indications of future performance 
 
 
 This prompt format is close to what a sell-side analyst would produce, while keeping the output concise enough for a retail investor to digest in about **4–6 minutes** instead of reading a 40–80 page earnings call transcript.
+
+---
+
+## Final Social Media Summary Output
+
+After completing the full investor-focused research note above, also generate a separate section titled:
+
+# Tweet-Style Investor Summary
+
+Write one concise tweet-style summary of the earnings call.
+
+Rules:
+- Maximum 500 words.
+- Write in a crisp investor-friendly tone.
+- Do NOT make it a long thread.
+- Do NOT use excessive emojis.
+- Do NOT use marketing language.
+- Include only the most important numbers and thesis-changing points.
+- Mention key guidance clearly.
+- Mention key positives.
+- Mention key risks/watchouts.
+- Mention whether the investment thesis is Strengthening / Neutral / Weakening.
+- Avoid unnecessary details and transcript-style commentary.
+- Use simple language suitable for serious retail investors.
+- Do not give buy/sell recommendations.
+- Do not mention valuation unless discussed in the transcript.
+- Prefer exact numbers over adjectives.
+- If a metric is not discussed, do not invent it.
+
+Tweet summary should follow this structure:
+
+[Company Name] [Quarter] Concall Summary:
+
+1–2 lines on overall performance.
+
+Key numbers:
+AUM / Revenue / NII / PAT / Margins / Growth / Asset Quality, depending on sector.
+
+Guidance:
+Mention management’s future targets with exact numbers and timelines.
+
+Key positives:
+Mention 3–5 strongest points.
+
+Key watchouts:
+Mention 3–5 risks or misses.
+
+Final view:
+State whether the thesis is Strengthening / Neutral / Weakening and why.
+
+Keep it readable as one standalone post.
