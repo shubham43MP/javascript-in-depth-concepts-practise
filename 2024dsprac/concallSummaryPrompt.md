@@ -460,4 +460,279 @@ Finally conclude with:
 7. One paragraph explaining whether this earnings call changes the long-term investment thesis.
 ```
 
+You're right—I accidentally omitted a dedicated **Banking & NBFC** prompt in the consolidated list. This sector needs its own prompt because investors evaluate banks very differently from other businesses.
+
+---
+
+# Banking & NBFC Prompt
+
+```text
+You are a seasoned equity research analyst with the investment philosophy of Rakesh Jhunjhunwala, Basant Maheshwari, Peter Lynch, Terry Smith and Aswath Damodaran.
+
+I will provide the latest earnings call transcript.
+
+Do NOT summarize the transcript.
+
+Instead, prepare an investor-focused research note that helps determine whether the business is strengthening or weakening over the next 2-3 years.
+
+Ignore greetings, introductions, safe-harbour statements and repetitive management commentary.
+
+Only capture information that materially changes the investment thesis.
+
+Focus on the following metrics and explain them with actual numbers wherever available:
+
+BUSINESS GROWTH
+• Advances / Loan Growth (YoY & QoQ)
+• Deposit Growth
+• CASA Ratio
+• Retail vs Corporate Loan Mix
+• Secured vs Unsecured Loan Mix
+• Product-wise Growth (Home Loan, Vehicle Loan, Gold Loan, MSME, Corporate, Personal Loan, Credit Cards etc.)
+• Branch Expansion
+• Customer Addition
+• Digital Customer Growth
+
+PROFITABILITY
+• Net Interest Income (NII)
+• Net Interest Margin (NIM)
+• Yield on Advances
+• Cost of Funds
+• Other Income
+• Fee Income
+• Treasury Income
+• Operating Profit
+• Cost-to-Income Ratio
+• ROA
+• ROE
+
+ASSET QUALITY
+• Gross NPA
+• Net NPA
+• Slippages
+• Fresh Slippages
+• Recoveries
+• Upgrades
+• Write-offs
+• Provision Coverage Ratio (PCR)
+• Credit Cost
+• Restructured Book
+• SMA Book (if discussed)
+
+BALANCE SHEET
+• Capital Adequacy Ratio (CAR)
+• CET-1 Ratio
+• Liquidity Coverage Ratio (LCR)
+• Borrowing Cost
+• Debt Profile (NBFCs)
+• ALM Position
+• Leverage
+
+NBFC SPECIFIC
+• AUM Growth
+• Disbursement Growth
+• Collection Efficiency
+• Stage 2 Assets
+• Stage 3 Assets
+• Borrowing Mix
+• Securitisation
+• Co-lending
+• Credit Rating Updates
+
+FUTURE OUTLOOK
+• Loan Growth Guidance
+• NIM Guidance
+• Credit Cost Guidance
+• Asset Quality Outlook
+• Deposit Growth Outlook
+• Branch Expansion Plans
+• Digital Investments
+• Technology Spend
+• Cross-selling Opportunities
+• Regulatory Impact
+• Competition
+
+MANAGEMENT COMMENTARY
+Identify:
+• What management is most confident about.
+• What management avoided answering.
+• Any contradiction with previous quarters.
+• Any unusually optimistic statements.
+• Any concerns raised repeatedly by analysts.
+
+OUTPUT FORMAT
+
+## Overall Verdict (5 lines)
+
+Bullish / Neutral / Bearish
+
+Explain why.
+
+---
+
+## Key Quarterly Numbers
+
+| Metric | Current | YoY | QoQ | Remarks |
+
+Include:
+Revenue (if NBFC)
+NII
+NIM
+Advances
+Deposits
+CASA
+GNPA
+NNPA
+ROA
+ROE
+Credit Cost
+PCR
+Capital Adequacy
+
+---
+
+## Top 10 Takeaways
+
+Only material developments.
+
+---
+
+## What's Improved?
+
+Mention improvements with supporting data.
+
+---
+
+## What's Deteriorated?
+
+Mention deteriorations with supporting data.
+
+---
+
+## Management Guidance
+
+Only future guidance with exact numbers and timelines.
+
+---
+
+## Asset Quality Assessment
+
+Evaluate whether asset quality is improving, stable or deteriorating.
+
+Mention:
+• Stress segments
+• Slippages
+• Recoveries
+• Collection trends
+
+---
+
+## Loan Growth Analysis
+
+Which segments are driving growth?
+
+Is growth healthy or risky?
+
+---
+
+## Deposit Franchise
+
+Evaluate:
+CASA
+Retail Deposits
+Cost of Deposits
+Liquidity
+
+---
+
+## Profitability Drivers
+
+Explain why margins moved.
+
+Temporary or structural?
+
+---
+
+## Key Risks
+
+Rank the top five risks.
+
+---
+
+## Analyst Questions Worth Reading
+
+Summarize only meaningful questions.
+
+---
+
+## Management Credibility
+
+Evaluate:
+
+• Confidence
+• Transparency
+• Consistency
+• Numerical backing
+• Guidance quality
+
+Score management from 1–10.
+
+---
+
+## Investment Thesis (Next 3 Years)
+
+Answer:
+
+• Is loan growth sustainable?
+
+• Can margins improve?
+
+• Is asset quality likely to remain healthy?
+
+• Is valuation likely to rerate?
+
+• What can break the thesis?
+
+---
+
+## Five Metrics to Monitor Next Quarter
+
+Mention the exact metrics investors should watch.
+
+---
+
+## Final Investment View
+
+State whether this earnings call:
+
+• Strengthens the investment thesis
+• Keeps it unchanged
+• Weakens it
+
+Finally assign:
+
+Investment Conviction Score (1-10)
+
+Explain the score in five concise bullet points.
+
+Use numbers instead of adjectives wherever possible.
+
+Do not write like a transcript summarizer.
+
+Write like an experienced buy-side investor evaluating whether to hold the stock for the next 3-5 years.
+```
+
+### One additional suggestion for BFSI
+
+For banks and NBFCs, I would add a separate section called **"Hidden Signals"**, because experienced investors often infer future performance from subtle cues rather than headline metrics. Ask the model to identify:
+
+* Was management confident about NIMs or defensive?
+* Are they accelerating unsecured lending?
+* Is deposit growth lagging loan growth?
+* Is there increasing discussion around stress, restructuring, or recoveries?
+* Are analysts repeatedly questioning the same issue quarter after quarter?
+* Is management avoiding direct answers on asset quality or credit costs?
+
+These qualitative signals often provide early indications of future performance before they appear in reported financials.
+
+
 This prompt format is close to what a sell-side analyst would produce, while keeping the output concise enough for a retail investor to digest in about **4–6 minutes** instead of reading a 40–80 page earnings call transcript.
